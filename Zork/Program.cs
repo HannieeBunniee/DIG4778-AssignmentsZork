@@ -2,83 +2,109 @@
 //===DIG4778 Tool + Plugin===//
 
 using System; //use this so u dont have to type system. over n over
+using System.Collections.Generic;
+
 
 namespace Zork
 {
-    
-    // made the new class Commands.cs and pasted the code
 
+    // made the new class Commands.cs and pasted the code
 
     class Program
     {
+        private static string CurrentRoom //making this as a place to hold the array number for the current room
+        {
+            get
+            {
+                return Rooms[Location.Row, Location.Column];
+            }
+        }
+
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Zork!");
-            string outputString;
             Commands command = Commands.UNKNOWN;
             while (command != Commands.QUIT) //making the game keep looping and wont end unless quit
             {
-                Console.WriteLine(Rooms[CurrentRoomIndex]); //this make the debug write what room they are in
+                Console.WriteLine(CurrentRoom); //this make the debug write what room they are in
                 Console.Write("> ");
                 command = ToCommand(Console.ReadLine().Trim());
 
                 switch (command)
                 {
                     case Commands.QUIT:
-                        outputString = "Thanks for playing!";
+                        Console.WriteLine("Thanks for playing!");
                         break;
                     case Commands.LOOK:
-                        outputString = "This is an open field west of a white house, with a boarded front door. A rubber mat saying 'Welcome to Zork' lies by the door.";
+                        Console.WriteLine("This is an open field west of a white house, with a boarded front door. A rubber mat saying 'Welcome to Zork' lies by the door.");
                         break;
                     case Commands.NORTH:
                     case Commands.SOUTH:
                     case Commands.EAST:
                     case Commands.WEST:
-                        outputString = Move(command) ? $"You move {command}" : "The way is shut!"; // ":" is to write the way is shut when there is nothing else to write in the rooms array
+                        if (Move(command) == false)
+                        {
+                            Console.WriteLine("The way is shut!");
+                        }
                         break;
                     default:
-                        outputString = "Unknown Command";
+                        Console.WriteLine("Unknown Command");
                         break;
                 }
-                Console.WriteLine(outputString);
             }
-            
+
         }
 
         private static Commands ToCommand(string commandString) => (Enum.TryParse<Commands>(commandString, true, out Commands result) ? result : Commands.UNKNOWN);
         // ^ somewhere in there have the bool statement to ignore case so it can read lowecase without ToUpper line code
 
 
-        private static string[] Rooms = //this is the array of the room from 0-4
+        private static readonly string[,] Rooms = //this is the array of the rooms by row/column ex: rocky trail is 0,0
         {
-            "Forest",
-            "West of House",
-            "Behind House",
-            "Clearing",
-            "Canyon View"
+            { "Rocky Trail", "South of House", "Canyon View" },
+            { "Forest", "West of House", "Behind House" },
+            { "Dense Woods", "North of House", "Clearing" }
         };
-        private static int CurrentRoomIndex = 1; //this make the player start at west of the house aka array 1
+        private static (int Row, int Column) Location = (1, 1); //this make the player start at west of the house aka array 1,1
 
+        private static readonly List<Commands> Directions = new List<Commands> // idk but this is  for thr room array ^
+        {
+            Commands.NORTH,
+            Commands.SOUTH,
+            Commands.EAST,
+            Commands.WEST,
+        };
 
         private static bool Move(Commands command)
         {
-          bool didMove = false;
-          switch (command)
-          {
-              case Commands.EAST when CurrentRoomIndex < Rooms.Length - 1: //allow player to move east(right) as long as the room array isnt exceed the given room length
-                  CurrentRoomIndex++;
-                  didMove = true;
-                  break;
 
-              case Commands.WEST when CurrentRoomIndex > 0: //allow player to move west(left) as long as the room array is higher than 0
-                    CurrentRoomIndex--;
-                  didMove = true;
-                  break;
-          }
-          return didMove;
+            bool didMove = false;
+            switch (command)
+            {
+                case Commands.NORTH when Location.Row < Rooms.GetLength(0) - 1: //allow player to move north(down) as long as the room array isnt exceed the given room length
+                    Location.Row++;
+                    didMove = true;
+                    break;
+
+                case Commands.SOUTH when Location.Row > 0: //allow player to move south(up) as long as the room array isnt exceed the given room length
+                    Location.Row--;
+                    didMove = true;
+                    break;
+
+                case Commands.EAST when Location.Column < Rooms.GetLength(1) - 1: //allow player to move east(right) as long as the room array isnt exceed the given room length
+                    Location.Column++;
+                    didMove = true;
+                    break;
+
+                case Commands.WEST when Location.Column > 0: //allow player to move west(left) as long as the room array isnt exceed the given room length
+                    Location.Column--;
+                    didMove = true;
+                    break;
+            }
+            return didMove;
+
         }
 
-        
-     
     }
 }
