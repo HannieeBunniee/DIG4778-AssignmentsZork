@@ -56,10 +56,11 @@ namespace Zork
 
         }
 
-        private static Commands ToCommand(string commandString) => (Enum.TryParse<Commands>(commandString, true, out Commands result) ? result : Commands.UNKNOWN);
+        private static Commands ToCommand(string commandString) =>
+            Enum.TryParse(commandString, true, out Commands result) ? result : Commands.UNKNOWN;
         // ^ somewhere in there have the bool statement to ignore case so it can read lowecase without ToUpper line code
 
-
+        
         private static readonly string[,] Rooms = //this is the array of the rooms by row/column ex: rocky trail is 0,0
         {
             { "Rocky Trail", "South of House", "Canyon View" },
@@ -76,8 +77,12 @@ namespace Zork
             Commands.WEST,
         };
 
+        private static bool IsDirection(Commands command) => Directions.Contains(command); //debug stuff
+
+
         private static bool Move(Commands command)
         {
+            Assert.IsTrue(IsDirection(command), "Invalid direction."); //this is a debug stuff (create a assert.cs class)
 
             bool didMove = false;
             switch (command)
