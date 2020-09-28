@@ -8,11 +8,35 @@ using System.Collections.Generic;
 namespace Zork
 {
 
-    // made the new class Commands.cs and pasted the code
-
     class Program
     {
-        private static string CurrentRoom //making this as a place to hold the array number for the current room
+        private string mName;
+        public string Name
+        {
+            get
+            {
+                return mName;
+            }
+        }
+
+        private string mDescription;
+        public string Description
+        {
+            get
+            {
+                return mDescription;    
+            }
+            set
+            {
+                mName = value;
+            }
+        }
+
+
+
+
+
+        private static Room CurrentRoom //making this as a place to hold the array number for the current room
         {
             get
             {
@@ -20,9 +44,11 @@ namespace Zork
             }
         }
 
+        
 
         static void Main(string[] args)
         {
+            InitializeRoomDescriptions();
             Console.WriteLine("Welcome to Zork!");
             Commands command = Commands.UNKNOWN;
             while (command != Commands.QUIT) //making the game keep looping and wont end unless quit
@@ -37,7 +63,7 @@ namespace Zork
                         Console.WriteLine("Thanks for playing!");
                         break;
                     case Commands.LOOK:
-                        Console.WriteLine("This is an open field west of a white house, with a boarded front door. A rubber mat saying 'Welcome to Zork' lies by the door.");
+                        Console.WriteLine(CurrentRoom.Description);
                         break;
                     case Commands.NORTH:
                     case Commands.SOUTH:
@@ -61,13 +87,28 @@ namespace Zork
         // ^ somewhere in there have the bool statement to ignore case so it can read lowecase without ToUpper line code
 
         
-        private static readonly string[,] Rooms = //this is the array of the rooms by row/column ex: rocky trail is 0,0
+        private static readonly Room[,] Rooms = //this is the 2d aray of the rooms by row/column ex: rocky trail is 0,0
         {
-            { "Rocky Trail", "South of House", "Canyon View" },
-            { "Forest", "West of House", "Behind House" },
-            { "Dense Woods", "North of House", "Clearing" }
+            { new Room("Rocky Trail"), new Room("South of House"), new Room("Canyon View") },
+            { new Room("Forest"), new Room("West of House"), new Room("Behind House") },
+            { new Room("Dense Woods"), new Room("North of House"), new Room("Clearing") }
         };
         private static (int Row, int Column) Location = (1, 1); //this make the player start at west of the house aka array 1,1
+
+        private static void InitializeRoomDescriptions()
+        {
+            Rooms[0, 0].Description = "You are on a rock-strewn trail.";                                                                                 //Rocky Trail
+            Rooms[0, 1].Description = "You are facing the south side of a white house. There is no door here, and all the windows are barred.";          //South of House
+            Rooms[0, 2].Description = "You are at the top of the Great Canyon on its south wall.";                                                       //Caynon View
+
+            Rooms[1, 0].Description = "This is a forest, with trees in all directions around you.";                                                      //Forest
+            Rooms[1, 1].Description = "This is an open field wesst of white house, with a boarded front door.";                                          //West of House
+            Rooms[1, 2].Description = "You are behind the white house. In one corner of the ouse there is a small window which is slightly ajar.";       //Behind House
+
+            Rooms[2, 0].Description = "This is a dimly lit forest, with large trees all around. To the rest, there appears to be sunlight.";             //Dense Woods
+            Rooms[2, 1].Description = "You are facing the north side of a white house. There is no door here, and all the window are barred.";           //North of House
+            Rooms[2, 2].Description = "You are in a clearing, with a forest surrounding you on the west and south.";                                     //Clearing
+        }
 
         private static readonly List<Commands> Directions = new List<Commands> // idk but this is  for thr room array ^
         {
