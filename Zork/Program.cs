@@ -10,33 +10,8 @@ namespace Zork
 
     class Program
     {
-        private string mName;
-        public string Name
-        {
-            get
-            {
-                return mName;
-            }
-        }
 
-        private string mDescription;
-        public string Description
-        {
-            get
-            {
-                return mDescription;    
-            }
-            set
-            {
-                mName = value;
-            }
-        }
-
-
-
-
-
-        private static Room CurrentRoom //making this as a place to hold the array number for the current room
+        public static Room CurrentRoom //making this as a place to hold the array number for the current room
         {
             get
             {
@@ -50,10 +25,19 @@ namespace Zork
         {
             InitializeRoomDescriptions();
             Console.WriteLine("Welcome to Zork!");
+
+            Room previousRoom = null;
             Commands command = Commands.UNKNOWN;
             while (command != Commands.QUIT) //making the game keep looping and wont end unless quit
             {
                 Console.WriteLine(CurrentRoom); //this make the debug write what room they are in
+                // v have to write this if statement after console.writeline currentroom and before console.write("> "); or it wont print stuff out
+                if (previousRoom != CurrentRoom) //making it auto write the description of the room but wont rewrite again if the way is shut
+                {
+                    Console.WriteLine(CurrentRoom.Description);
+                    previousRoom = CurrentRoom;
+                }
+
                 Console.Write("> ");
                 command = ToCommand(Console.ReadLine().Trim());
 
@@ -78,6 +62,7 @@ namespace Zork
                         Console.WriteLine("Unknown Command");
                         break;
                 }
+
             }
 
         }
@@ -89,25 +74,32 @@ namespace Zork
         
         private static readonly Room[,] Rooms = //this is the 2d aray of the rooms by row/column ex: rocky trail is 0,0
         {
-            { new Room("Dense Woods"), new Room("North of House"), new Room("Clearing") },
+            { new Room("Rocky Trail"), new Room("South of House"), new Room("Canyon View") },
             { new Room("Forest"), new Room("West of House"), new Room("Behind House") },
-            { new Room("Rocky Trail"), new Room("South of House"), new Room("Canyon View") }
+            { new Room("Dense Woods"), new Room("North of House"), new Room("Clearing") }
         };
         private static (int Row, int Column) Location = (1, 1); //this make the player start at west of the house aka array 1,1
 
         private static void InitializeRoomDescriptions()
         {
-            Rooms[0, 0].Description = "This is a dimly lit forest, with large trees all around. To the rest, there appears to be sunlight.";             //Dense Woods
-            Rooms[0, 1].Description = "You are facing the north side of a white house. There is no door here, and all the window are barred.";           //North of House
-            Rooms[0, 2].Description = "You are in a clearing, with a forest surrounding you on the west and south.";                                     //Clearing
+            var roomMap = new Dictionary<string, Room>();
+            foreach (Room room in Rooms)
+            {
+                roomMap[room.Name] = room;
+            }
 
-            Rooms[1, 0].Description = "This is a forest, with trees in all directions around you.";                                                      //Forest
-            Rooms[1, 1].Description = "This is an open field wesst of white house, with a boarded front door.";                                          //West of House
-            Rooms[1, 2].Description = "You are behind the white house. In one corner of the ouse there is a small window which is slightly ajar.";       //Behind House
+            roomMap["Rocky Trail"].Description = "You are on a rock-strewn trail.";
+            roomMap["South of House"].Description = "You are facing the south side of a white house.There is no door here, and all the windows are barred.";
+            roomMap["Canyon View"].Description = "You are at the top of the Great Canyon on its south wall.";
 
-            Rooms[2, 0].Description = "You are on a rock-strewn trail.";                                                                                 //Rocky Trail
-            Rooms[2, 1].Description = "You are facing the south side of a white house. There is no door here, and all the windows are barred.";          //South of House
-            Rooms[2, 2].Description = "You are at the top of the Great Canyon on its south wall.";                                                       //Caynon View
+            roomMap["Forest"].Description = "This is a forest, with trees in all directions around you.";
+            roomMap["West of House"].Description = "This is an open field wesst of white house, with a boarded front door.";
+            roomMap["Behind House"].Description = "You are behind the white house. In one corner of the ouse there is a small window which is slightly ajar.";
+
+            roomMap["Dense Woods"].Description = "This is a dimly lit forest, with large trees all around. To the rest, there appears to be sunlight.";
+            roomMap["North of House"].Description = "You are facing the north side of a white house. There is no door here, and all the window are barred.";
+            roomMap["Clearing"].Description = "You are in a clearing, with a forest surrounding you on the west and south.";
+            
         }
 
         private static readonly List<Commands> Directions = new List<Commands> // idk but this is  for thr room array ^

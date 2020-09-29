@@ -9,6 +9,8 @@ namespace Zork
 {
     class Room
     {
+        public override string ToString() => Name; // => is equivalent to typing { return Name; }
+
         public string Name { get; }
 
         public string Description { get; set; } 
@@ -19,6 +21,5 @@ namespace Zork
             Description = description;
         }
 
-        public override string ToString() => Name; // => is equivalent to typing { return Name; }
     }
 }
