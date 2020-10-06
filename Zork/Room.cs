@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Zork
 {
-    class Room
+    public class Room
     {
         public override string ToString() => Name; // => is equivalent to typing { return Name; }
 

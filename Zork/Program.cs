@@ -3,14 +3,17 @@
 
 using System; //use this so u dont have to type system. over n over
 using System.Collections.Generic;
-
+using System.Data.Common;
+using System.IO;
+using System.Diagnostics;
+using System.Linq;
 
 namespace Zork
 {
 
     class Program
     {
-
+       
         public static Room CurrentRoom //making this as a place to hold the array number for the current room
         {
             get
@@ -23,8 +26,14 @@ namespace Zork
 
         static void Main(string[] args)
         {
-            InitializeRoomDescriptions();
             Console.WriteLine("Welcome to Zork!");
+
+            const string defaultRoomsFilename = "Rooms.txt";
+            string roomsFilename = (args.Length > 0 ? args[(int)CommandLineArguments.RoomsFilename] : defaultRoomsFilename);
+
+            //string roomsFilename = "Rooms.txt"; /////////
+            InitializeRoomDescriptions(roomsFilename);
+
 
             Room previousRoom = null;
             Commands command = Commands.UNKNOWN;
@@ -80,25 +89,42 @@ namespace Zork
         };
         private static (int Row, int Column) Location = (1, 1); //this make the player start at west of the house aka array 1,1
 
-        private static void InitializeRoomDescriptions()
+
+        private static readonly Dictionary<string, Room> RoomMap; ///
+        static Program() /////
         {
-            var roomMap = new Dictionary<string, Room>();
+            RoomMap = new Dictionary<string, Room>();
             foreach (Room room in Rooms)
             {
-                roomMap[room.Name] = room;
+                RoomMap[room.Name] = room;
             }
+        }
 
-            roomMap["Rocky Trail"].Description = "You are on a rock-strewn trail.";
-            roomMap["South of House"].Description = "You are facing the south side of a white house.There is no door here, and all the windows are barred.";
-            roomMap["Canyon View"].Description = "You are at the top of the Great Canyon on its south wall.";
+        private enum Fields ///////
+        {
+            Name = 0,
+            Description
+        }
 
-            roomMap["Forest"].Description = "This is a forest, with trees in all directions around you.";
-            roomMap["West of House"].Description = "This is an open field wesst of white house, with a boarded front door.";
-            roomMap["Behind House"].Description = "You are behind the white house. In one corner of the ouse there is a small window which is slightly ajar.";
+        private enum CommandLineArguments
+        {
+            RoomsFilename = 0
+        }
 
-            roomMap["Dense Woods"].Description = "This is a dimly lit forest, with large trees all around. To the rest, there appears to be sunlight.";
-            roomMap["North of House"].Description = "You are facing the north side of a white house. There is no door here, and all the window are barred.";
-            roomMap["Clearing"].Description = "You are in a clearing, with a forest surrounding you on the west and south.";
+        private static void InitializeRoomDescriptions (string roomsFilename)  ////////
+        {
+            const string fieldDelimiter = "##";
+            const int expectedFieldCount = 2;
+
+            var roomQuery = from line in File.ReadLines(roomsFilename)
+                            let fields = line.Split(fieldDelimiter)
+                            where fields.Length == expectedFieldCount
+                            select (Name: fields[(int)Fields.Name],
+                                    Description: fields[(int)Fields.Description]);
+            foreach (var (Name, Description) in roomQuery)
+            {
+                RoomMap[Name].Description = Description;
+            }    
             
         }
 
@@ -108,6 +134,7 @@ namespace Zork
             Commands.SOUTH,
             Commands.EAST,
             Commands.WEST,
+            Commands.LOOK
         };
 
         private static bool IsDirection(Commands command) => Directions.Contains(command); //debug stuff
@@ -143,6 +170,8 @@ namespace Zork
             return didMove;
 
         }
+
+
 
     }
 }
