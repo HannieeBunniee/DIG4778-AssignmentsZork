@@ -7,6 +7,7 @@ using System.Data.Common;
 using System.IO;
 using System.Diagnostics;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace Zork
 {
@@ -28,10 +29,9 @@ namespace Zork
         {
             Console.WriteLine("Welcome to Zork!");
 
-            const string defaultRoomsFilename = "Rooms.txt";
+            const string defaultRoomsFilename = "Rooms.json";
             string roomsFilename = (args.Length > 0 ? args[(int)CommandLineArguments.RoomsFilename] : defaultRoomsFilename);
 
-            //string roomsFilename = "Rooms.txt"; /////////
             InitializeRoomDescriptions(roomsFilename);
 
 
@@ -81,7 +81,7 @@ namespace Zork
         // ^ somewhere in there have the bool statement to ignore case so it can read lowecase without ToUpper line code
 
         
-        private static readonly Room[,] Rooms = //this is the 2d aray of the rooms by row/column ex: rocky trail is 0,0
+        private static Room[,] Rooms = //this is the 2d aray of the rooms by row/column ex: rocky trail is 0,0
         {
             { new Room("Rocky Trail"), new Room("South of House"), new Room("Canyon View") },
             { new Room("Forest"), new Room("West of House"), new Room("Behind House") },
@@ -90,8 +90,9 @@ namespace Zork
         private static (int Row, int Column) Location = (1, 1); //this make the player start at west of the house aka array 1,1
 
 
-        private static readonly Dictionary<string, Room> RoomMap; ///
-        static Program() /////
+        private static readonly Dictionary<string, Room> RoomMap; 
+
+        static Program() 
         {
             RoomMap = new Dictionary<string, Room>();
             foreach (Room room in Rooms)
@@ -100,7 +101,7 @@ namespace Zork
             }
         }
 
-        private enum Fields ///////
+        private enum Fields 
         {
             Name = 0,
             Description
@@ -111,22 +112,8 @@ namespace Zork
             RoomsFilename = 0
         }
 
-        private static void InitializeRoomDescriptions (string roomsFilename)  ////////
-        {
-            const string fieldDelimiter = "##";
-            const int expectedFieldCount = 2;
-
-            var roomQuery = from line in File.ReadLines(roomsFilename)
-                            let fields = line.Split(fieldDelimiter)
-                            where fields.Length == expectedFieldCount
-                            select (Name: fields[(int)Fields.Name],
-                                    Description: fields[(int)Fields.Description]);
-            foreach (var (Name, Description) in roomQuery)
-            {
-                RoomMap[Name].Description = Description;
-            }    
-            
-        }
+        private static void InitializeRoomDescriptions(string roomsFilename) =>
+            Rooms = JsonConvert.DeserializeObject<Room[,]>(File.ReadAllText(roomsFilename));
 
         private static readonly List<Commands> Directions = new List<Commands> // idk but this is  for thr room array ^
         {
