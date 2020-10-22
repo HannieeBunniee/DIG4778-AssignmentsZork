@@ -14,6 +14,9 @@ namespace Zork
         [JsonIgnore]
         private bool IsRunning { get; set; }
 
+        [JsonIgnore]
+        public CommandManager CommandManager { get; }
+
         public Game(World world, Player player)
         {
             World = world;
@@ -58,7 +61,7 @@ namespace Zork
 
                 if (CommandManager.PerformCommand(this, Console.ReadLine().Trim()))
                 {
-                    Player.Move++;
+                    Player.Moves++;
                 }
                 else
                 {
