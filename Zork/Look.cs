@@ -1,12 +1,13 @@
 ﻿using System;
-
+using System.Text;
+using System.Collections.Generic;
 
 namespace Zork
 {
-    //[CommandClass]
+    [CommandClass]
     public static class LookCommand
     {
-        [CommandClass("LOOK", new string[] { "LOOK", "L" })]
+        [Command("LOOK", new string[] { "LOOK", "L" })]
         public static void Look(Game game, CommandContext commandContext) => Console.WriteLine(game.Player.Location.Description);
     }
 }

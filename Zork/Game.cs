@@ -111,7 +111,7 @@ namespace Zork
             {
                 try
                 {
-                    var scriptOptions = scriptOptions.Default.AddReferences(Assembly.GetExecutingAssembly());
+                    var scriptOptions = ScriptOptions.Default.AddReferences(Assembly.GetExecutingAssembly());
 
                     scriptOptions = scriptOptions.WithEmitDebugInformation(true)
                                     .WithFilePath(new FileInfo(file).FullName)

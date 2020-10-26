@@ -2,6 +2,11 @@
 //===DIG4778 Tool + Plugin===//
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using Newtonsoft.Json;
+using System.Diagnostics;
+using System.Data.Common;
 
 namespace Zork
 {
