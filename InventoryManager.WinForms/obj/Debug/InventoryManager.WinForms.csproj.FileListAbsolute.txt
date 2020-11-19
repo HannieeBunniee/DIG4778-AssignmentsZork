@@ -1,0 +1,30 @@
+D:\New folder (4)\InventoryManager.WinForms\bin\Debug\World.json
+D:\New folder (4)\InventoryManager.WinForms\bin\Debug\InventoryManager.WinForms.exe.config
+D:\New folder (4)\InventoryManager.WinForms\bin\Debug\InventoryManager.WinForms.exe
+D:\New folder (4)\InventoryManager.WinForms\bin\Debug\InventoryManager.WinForms.pdb
+D:\New folder (4)\InventoryManager.WinForms\bin\Debug\InventoryManager.Data.dll
+D:\New folder (4)\InventoryManager.WinForms\bin\Debug\Newtonsoft.Json.dll
+D:\New folder (4)\InventoryManager.WinForms\bin\Debug\InventoryManager.Data.pdb
+D:\New folder (4)\InventoryManager.WinForms\bin\Debug\Newtonsoft.Json.xml
+D:\New folder (4)\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.csprojAssemblyReference.cache
+D:\New folder (4)\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.Forms.AddItemForm.resources
+D:\New folder (4)\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.Forms.AddPlayerForm.resources
+D:\New folder (4)\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.Forms.MainForm.resources
+D:\New folder (4)\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.Properties.Resources.resources
+D:\New folder (4)\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.csproj.GenerateResource.cache
+D:\New folder (4)\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.csproj.CoreCompileInputs.cache
+D:\New folder (4)\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.csproj.Fody.CopyLocal.cache
+D:\New folder (4)\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.csproj.CopyComplete
+D:\New folder (4)\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.exe
+D:\New folder (4)\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.pdb
+D:\New folder (4)\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.Controls.EquippedItemControl.resources
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.csprojAssemblyReference.cache
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.Controls.EquippedItemControl.resources
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.Forms.AddItemForm.resources
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.Forms.AddPlayerForm.resources
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.Forms.MainForm.resources
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.Properties.Resources.resources
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.csproj.GenerateResource.cache
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.csproj.CoreCompileInputs.cache
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.exe
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.WinForms\obj\Debug\InventoryManager.WinForms.pdb

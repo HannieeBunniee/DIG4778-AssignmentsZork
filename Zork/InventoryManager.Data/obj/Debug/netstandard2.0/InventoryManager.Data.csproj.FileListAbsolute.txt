@@ -1,0 +1,16 @@
+D:\New folder (4)\InventoryManager.Data\bin\Debug\netstandard2.0\InventoryManager.Data.deps.json
+D:\New folder (4)\InventoryManager.Data\bin\Debug\netstandard2.0\InventoryManager.Data.dll
+D:\New folder (4)\InventoryManager.Data\bin\Debug\netstandard2.0\InventoryManager.Data.pdb
+D:\New folder (4)\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.csprojAssemblyReference.cache
+D:\New folder (4)\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.AssemblyInfoInputs.cache
+D:\New folder (4)\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.AssemblyInfo.cs
+D:\New folder (4)\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.csproj.CoreCompileInputs.cache
+D:\New folder (4)\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.csproj.Fody.CopyLocal.cache
+D:\New folder (4)\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.dll
+D:\New folder (4)\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.pdb
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.csprojAssemblyReference.cache
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.AssemblyInfoInputs.cache
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.AssemblyInfo.cs
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.csproj.CoreCompileInputs.cache
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.dll
+C:\Users\hanni\Downloads\Inventory-Manager-spare-copy\InventoryManager.Data\obj\Debug\netstandard2.0\InventoryManager.Data.pdb

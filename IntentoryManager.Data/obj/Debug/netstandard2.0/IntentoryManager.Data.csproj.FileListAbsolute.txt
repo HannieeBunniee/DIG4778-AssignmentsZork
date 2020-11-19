@@ -1,9 +1,0 @@
-D:\Documents\Githubs\DIG4778-AssignmentsZork\IntentoryManager.Data\bin\Debug\netstandard2.0\IntentoryManager.Data.deps.json
-D:\Documents\Githubs\DIG4778-AssignmentsZork\IntentoryManager.Data\bin\Debug\netstandard2.0\IntentoryManager.Data.dll
-D:\Documents\Githubs\DIG4778-AssignmentsZork\IntentoryManager.Data\bin\Debug\netstandard2.0\IntentoryManager.Data.pdb
-D:\Documents\Githubs\DIG4778-AssignmentsZork\IntentoryManager.Data\obj\Debug\netstandard2.0\IntentoryManager.Data.csprojAssemblyReference.cache
-D:\Documents\Githubs\DIG4778-AssignmentsZork\IntentoryManager.Data\obj\Debug\netstandard2.0\IntentoryManager.Data.AssemblyInfoInputs.cache
-D:\Documents\Githubs\DIG4778-AssignmentsZork\IntentoryManager.Data\obj\Debug\netstandard2.0\IntentoryManager.Data.AssemblyInfo.cs
-D:\Documents\Githubs\DIG4778-AssignmentsZork\IntentoryManager.Data\obj\Debug\netstandard2.0\IntentoryManager.Data.csproj.CoreCompileInputs.cache
-D:\Documents\Githubs\DIG4778-AssignmentsZork\IntentoryManager.Data\obj\Debug\netstandard2.0\IntentoryManager.Data.dll
-D:\Documents\Githubs\DIG4778-AssignmentsZork\IntentoryManager.Data\obj\Debug\netstandard2.0\IntentoryManager.Data.pdb
