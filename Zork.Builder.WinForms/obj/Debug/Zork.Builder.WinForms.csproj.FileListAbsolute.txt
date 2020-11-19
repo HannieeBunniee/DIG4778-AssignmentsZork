@@ -1,0 +1,17 @@
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\bin\Debug\Zork.Builder.WinForms.exe.config
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\bin\Debug\Zork.Builder.WinForms.exe
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\bin\Debug\Zork.Builder.WinForms.pdb
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\bin\Debug\Zork.common.dll
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\bin\Debug\Zork.common.pdb
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\obj\Debug\Zork.Builder.WinForms.csprojAssemblyReference.cache
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\obj\Debug\Zork.Builder.WinForms.MainForm.resources
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\obj\Debug\Zork.Builder.WinForms.Properties.Resources.resources
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\obj\Debug\Zork.Builder.WinForms.csproj.GenerateResource.cache
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\obj\Debug\Zork.Builder.WinForms.csproj.CoreCompileInputs.cache
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\obj\Debug\Zork.Builder.WinForms.csproj.CopyComplete
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\obj\Debug\Zork.Builder.WinForms.exe
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\obj\Debug\Zork.Builder.WinForms.pdb
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\bin\Debug\IntentoryManager.Data.dll
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\bin\Debug\IntentoryManager.Data.pdb
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Builder.WinForms\bin\Debug\Newtonsoft.Json.xml

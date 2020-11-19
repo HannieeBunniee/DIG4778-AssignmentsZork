@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "rRpnd441SzMZDmwz8bO4kD13uUxUN6jWa+BJKwo22GrxMorzlVDJKxnoKaqulQB2I1uoJwL21C+/2RumxaHWgQ==",
+  "success": true,
+  "projectFilePath": "D:\\Documents\\Githubs\\DIG4778-AssignmentsZork\\InventoryManager.Data\\InventoryManager.Data.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hanni\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\hanni\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
