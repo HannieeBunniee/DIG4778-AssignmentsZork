@@ -3,9 +3,10 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json;
-using Microsoft.CodeAnalysis.CSharp.Scripting;
-using Microsoft.CodeAnalysis.Scripting;
+//using Microsoft.CodeAnalysis.CSharp.Scripting;
+//using Microsoft.CodeAnalysis.Scripting;
 using System.Text;
+
 
 namespace Zork
 {
@@ -25,6 +26,9 @@ namespace Zork
         [JsonIgnore]
         public CommandManager CommandManager { get; }
 
+        [JsonIgnore]
+        public IOutputService Output { get; private set; }
+
         public Game(World world, Player player)
         {
             World = world;
@@ -33,20 +37,27 @@ namespace Zork
 
         public Game() => CommandManager = new CommandManager();
 
-        public static void Start(string gameFilename)
+        public static void StartFromFile(string gameFilename, IOutputService output)
         {
             if (!File.Exists(gameFilename))
             {
                 throw new FileNotFoundException("Expected file.", gameFilename);
             }
 
+            Start(File.ReadAllText(gameFilename), output);
+        }
+
+        public static void Start(string gameJsonString, IOutputService output)
+        {
+
             while (Instance == null || Instance.mIsRestarting)
             {
-                Instance = Load(gameFilename);
+                Instance = Load(gameJsonString);
+                Instance.Output = output;
                 Instance.LoadCommands();
-                Instance.LoadScripts();
+                //Instance.LoadScripts();
                 Instance.DisplayWelcomeMessage();
-                Instance.Run();
+                //Instance.Run();
             }
         }
 
@@ -56,13 +67,13 @@ namespace Zork
             Room previousRoom = null;
             while (mIsRunning)
             {
-                Console.WriteLine(Player.Location);
+                Output.WriteLine(Player.Location);
                 if (previousRoom != Player.Location)
                 {
                     CommandManager.PerformCommand(this, "LOOK");
                     previousRoom = Player.Location;
                 }
-                Console.Write("\n> ");
+                Output.Write("\n> ");
 
                 if (CommandManager.PerformCommand(this, Console.ReadLine().Trim()))
                 {
@@ -70,7 +81,7 @@ namespace Zork
                 }
                 else
                 {
-                    Console.WriteLine("That's not a verb I recognize.");
+                    Output.WriteLine("That's not a verb I recognize.");
                 }
             }
         }
@@ -84,9 +95,9 @@ namespace Zork
 
         public void Quit() => mIsRunning = false;
 
-        public static Game Load(string filename)
+        public static Game Load(string jsonString)
         {
-            Game game = JsonConvert.DeserializeObject<Game>(File.ReadAllText(filename));
+            Game game = JsonConvert.DeserializeObject<Game>(jsonString);
             game.Player = game.World.SpawnPlayer();
 
             return game;
@@ -105,7 +116,7 @@ namespace Zork
             CommandManager.AddCommands(commandMethods);
         }
 
-        private void LoadScripts()
+        /*private void LoadScripts()
         {
             foreach (string file in Directory.EnumerateFiles(ScriptDirectory, ScriptFileExtension))
             {
@@ -125,11 +136,11 @@ namespace Zork
                     Console.WriteLine($"Error compiling script: {file}  Error: {ex.Message}");
                 }
             }
-        }
+        }*/
 
         public bool ConfirmAction(string prompt)
         {
-            Console.Write(prompt);
+            Instance.Output.Write(prompt);
 
             while (true)
             {
@@ -144,16 +155,16 @@ namespace Zork
                 }
                 else
                 {
-                    Console.Write("Please answer yes or no.> ");
+                    Instance.Output.Write("Please answer yes or no.> ");
                 }
             }
         }
 
-        private void DisplayWelcomeMessage() => Console.WriteLine(WelcomeMessage);
+        private void DisplayWelcomeMessage() => Output.WriteLine(WelcomeMessage);
 
         public static readonly Random Random = new Random();
-        private static readonly string ScriptDirectory = "Scripts";
-        private static readonly string ScriptFileExtension = "*.csx";
+        //private static readonly string ScriptDirectory = "Scripts";
+        //private static readonly string ScriptFileExtension = "*.csx";
 
         [JsonProperty]
         private string WelcomeMessage = null;

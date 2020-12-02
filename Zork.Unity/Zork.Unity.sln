@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30420.98
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{A0079709-B318-D0F0-DE0B-236529E67E2F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zork", "..\Zork\Zork.csproj", "{9BDA9329-FF4D-4B35-B5B0-0EDF9B7EF1C6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zork.common", "..\Zork.common\Zork.common.csproj", "{A7B4BF9F-C30C-48BB-9BD5-7F5F85559A15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zork.common", "..\Zork.common\Zork.common.csproj", "{1B29DD13-A9A6-4386-A442-B9454A6D9209}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,15 +21,12 @@ Global
 		{9BDA9329-FF4D-4B35-B5B0-0EDF9B7EF1C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BDA9329-FF4D-4B35-B5B0-0EDF9B7EF1C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BDA9329-FF4D-4B35-B5B0-0EDF9B7EF1C6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A7B4BF9F-C30C-48BB-9BD5-7F5F85559A15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7B4BF9F-C30C-48BB-9BD5-7F5F85559A15}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7B4BF9F-C30C-48BB-9BD5-7F5F85559A15}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7B4BF9F-C30C-48BB-9BD5-7F5F85559A15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B29DD13-A9A6-4386-A442-B9454A6D9209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B29DD13-A9A6-4386-A442-B9454A6D9209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B29DD13-A9A6-4386-A442-B9454A6D9209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B29DD13-A9A6-4386-A442-B9454A6D9209}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2C7E12C2-7238-4E8D-8735-246805F7C5B1}
 	EndGlobalSection
 EndGlobal
