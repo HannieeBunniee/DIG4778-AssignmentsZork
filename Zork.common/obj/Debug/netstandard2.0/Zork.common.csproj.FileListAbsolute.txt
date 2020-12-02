@@ -1,4 +1,3 @@
-D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\obj\Debug\netstandard2.0\Zork.common.csprojAssemblyReference.cache
 D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\obj\Debug\netstandard2.0\Zork.common.AssemblyInfoInputs.cache
 D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\obj\Debug\netstandard2.0\Zork.common.AssemblyInfo.cs
 D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\obj\Debug\netstandard2.0\Zork.common.csproj.CoreCompileInputs.cache
