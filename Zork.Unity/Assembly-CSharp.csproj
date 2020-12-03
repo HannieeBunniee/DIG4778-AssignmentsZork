@@ -297,9 +297,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>D:/Documents/Githubs/DIG4778-AssignmentsZork/Zork.Unity/Assets/netstandard2.0/Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Zork.Common">
-      <HintPath>D:/Documents/Githubs/DIG4778-AssignmentsZork/Zork.Unity/Assets/netstandard2.0/Zork.Common.dll</HintPath>
-    </Reference>
     <Reference Include="Zork.common">
       <HintPath>D:/Documents/Githubs/DIG4778-AssignmentsZork/Zork.Unity/Assets/netstandard2.0/Zork.common.dll</HintPath>
     </Reference>
