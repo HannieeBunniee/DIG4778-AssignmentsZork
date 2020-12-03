@@ -9,3 +9,4 @@ D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\obj\Debug\netstandard2.
 D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Unity\Assets\netstandard2.0\Zork.common.deps.json
 D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Unity\Assets\netstandard2.0\Zork.common.dll
 D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Unity\Assets\netstandard2.0\Zork.common.pdb
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\obj\Debug\netstandard2.0\Zork.common.csprojAssemblyReference.cache

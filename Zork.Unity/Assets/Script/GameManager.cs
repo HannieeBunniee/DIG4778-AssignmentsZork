@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     {
         TextAsset gameJsonAsset = Resources.Load<TextAsset>(ZorkGameFileAssetName);
 
-        Game.Start(gameJsonAsset.text, Output);
+        Game.Start(gameJsonAsset.text, Input, Output);
     }
 
     void Start()
@@ -27,4 +27,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private UnityOutputService Output;
+
+    [SerializeField]
+    private UnityInputService Input;
 }

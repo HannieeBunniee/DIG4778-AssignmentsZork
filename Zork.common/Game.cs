@@ -27,6 +27,9 @@ namespace Zork
         public CommandManager CommandManager { get; }
 
         [JsonIgnore]
+        public IInputService Input { get; private set; }
+
+        [JsonIgnore]
         public IOutputService Output { get; private set; }
 
         public Game(World world, Player player)
@@ -37,27 +40,28 @@ namespace Zork
 
         public Game() => CommandManager = new CommandManager();
 
-        public static void StartFromFile(string gameFilename, IOutputService output)
+        public static void StartFromFile(string gameFilename, IInputService input, IOutputService output)
         {
             if (!File.Exists(gameFilename))
             {
                 throw new FileNotFoundException("Expected file.", gameFilename);
             }
 
-            Start(File.ReadAllText(gameFilename), output);
+            Start(File.ReadAllText(gameFilename),input, output);
         }
 
-        public static void Start(string gameJsonString, IOutputService output)
+        public static void Start(string gameJsonString, IInputService input, IOutputService output)
         {
 
             while (Instance == null || Instance.mIsRestarting)
             {
                 Instance = Load(gameJsonString);
+                Instance.Input = input;
                 Instance.Output = output;
                 Instance.LoadCommands();
                 //Instance.LoadScripts();
                 Instance.DisplayWelcomeMessage();
-                //Instance.Run();
+                Instance.Run();
             }
         }
 
@@ -74,8 +78,9 @@ namespace Zork
                     previousRoom = Player.Location;
                 }
                 Output.Write("\n> ");
+                string inputString = Console.ReadLine().Trim();
 
-                if (CommandManager.PerformCommand(this, Console.ReadLine().Trim()))
+                if (CommandManager.PerformCommand(this, inputString))
                 {
                     Player.Moves++;
                 }
