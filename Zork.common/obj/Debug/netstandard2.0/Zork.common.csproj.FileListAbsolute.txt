@@ -1,9 +1,12 @@
-D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\obj\Debug\netstandard2.0\Zork.common.AssemblyInfoInputs.cache
-D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\obj\Debug\netstandard2.0\Zork.common.AssemblyInfo.cs
-D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\obj\Debug\netstandard2.0\Zork.common.csproj.CoreCompileInputs.cache
 D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\bin\Debug\netstandard2.0\Zork.common.deps.json
 D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\bin\Debug\netstandard2.0\Zork.common.dll
 D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\bin\Debug\netstandard2.0\Zork.common.pdb
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Unity\netstandard2.0\Zork.common.deps.json
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Unity\netstandard2.0\Zork.common.dll
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Unity\netstandard2.0\Zork.common.pdb
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\obj\Debug\netstandard2.0\Zork.common.AssemblyInfoInputs.cache
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\obj\Debug\netstandard2.0\Zork.common.AssemblyInfo.cs
+D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\obj\Debug\netstandard2.0\Zork.common.csproj.CoreCompileInputs.cache
 D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\obj\Debug\netstandard2.0\Zork.common.dll
 D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.common\obj\Debug\netstandard2.0\Zork.common.pdb
 D:\Documents\Githubs\DIG4778-AssignmentsZork\Zork.Unity\Assets\netstandard2.0\Zork.common.deps.json

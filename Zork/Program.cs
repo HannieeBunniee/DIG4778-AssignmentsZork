@@ -1,12 +1,9 @@
 ﻿//=======Hanniee Tran========//
 //===DIG4778 Tool + Plugin===//
 
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using Newtonsoft.Json;
-using System.Diagnostics;
-using System.Data.Common;
+
 
 namespace Zork
 {
@@ -17,10 +14,20 @@ namespace Zork
             const string defaultGameFilename = "Zork.json";
             string gameFilename = (args.Length > 0 ? args[(int)CommandLineArguments.GameFilename] : defaultGameFilename);
 
+            ConsoleInputService input = new ConsoleInputService();
             ConsoleOutputService output = new ConsoleOutputService();
 
-            Game.StartFromFile(gameFilename, output);
-            Console.WriteLine("Thank you for playing!");
+            Game.StartFromFile(gameFilename, input, output);
+            Game.Instance.CommandManager.PerformCommand(Game.Instance, "LOOK");
+
+            while (Game.Instance.IsRunning)
+            {
+
+                output.Write("\n> ");
+                input.GetInput();
+            }
+
+            output.WriteLine("Thank you for playing!");
         }
         private enum CommandLineArguments
         {
