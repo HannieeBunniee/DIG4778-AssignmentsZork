@@ -6,12 +6,15 @@ using Newtonsoft.Json;
 //using Microsoft.CodeAnalysis.CSharp.Scripting;
 //using Microsoft.CodeAnalysis.Scripting;
 using System.Text;
+using System.ComponentModel;
 
 
 namespace Zork
 {
     public class Game
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         [JsonIgnore]
         public static Game Instance { get; private set; }
 
@@ -33,6 +36,7 @@ namespace Zork
         public IOutputService Output { get; private set; }
 
         public string WelcomeMessage { get; set; }
+        public string Name { get; set; }
 
         public Game(World world, Player player)
         {

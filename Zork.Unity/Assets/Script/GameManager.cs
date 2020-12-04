@@ -5,8 +5,19 @@ using Zork;
 public class GameManager : MonoBehaviour
 {
     public string ZorkFileName = @"Assets\Resources\Zork.json";
-    //public TMP_Text LocationText;
-    //public TMP_Text ScoreText;
+    public TMP_Text LocationText;
+    public TMP_Text ScoreText; 
+    public TMP_Text MoveText;
+
+    [SerializeField]
+    private string ZorkGameFileAssetName = "Zork";
+
+    [SerializeField]
+    private UnityOutputService OutputService;
+
+    [SerializeField]
+    private UnityInputService InputService;
+
     void Awake()
     {
         TextAsset gameJsonAsset = Resources.Load<TextAsset>(ZorkGameFileAssetName);
@@ -23,15 +34,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        LocationText.text = Game.Instance.Player.Location.ToString();
+        ScoreText.text = "Score: " + Game.Instance.Player.Score.ToString();
+        MoveText.text = "Move:  " + Game.Instance.Player.Moves.ToString();
+
     }
 
-    [SerializeField]
-    private string ZorkGameFileAssetName = "Zork";
-
-    [SerializeField]
-    private UnityOutputService OutputService;
-
-    [SerializeField]
-    private UnityInputService InputService;
+    
 }
