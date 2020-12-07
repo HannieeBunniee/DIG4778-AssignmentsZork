@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text ScoreText; 
     public TMP_Text MoveText;
 
+
     [SerializeField]
     private string ZorkGameFileAssetName = "Zork";
 
@@ -26,10 +27,7 @@ public class GameManager : MonoBehaviour
         Game.Instance.CommandManager.PerformCommand(Game.Instance, "LOOK");
     }
 
-    void Start()
-    {
-        
-    }
+
 
 
     void Update()

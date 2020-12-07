@@ -76,7 +76,12 @@ namespace Zork
             Room previousRoom = Player.Location;
             if (CommandManager.PerformCommand(this, inputString.Trim()))
             {
-                Player.Moves++;
+                if (CommandManager.Parse(inputString.Trim()).Command.Name != "REWARD"
+                    && CommandManager.Parse(inputString.Trim()).Command.Name != "SCORE")
+
+                {
+                    Player.Moves++;
+                }
 
                 if (previousRoom != Player.Location)
                 {
