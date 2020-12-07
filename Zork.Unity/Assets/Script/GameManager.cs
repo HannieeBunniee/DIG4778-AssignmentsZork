@@ -38,5 +38,12 @@ public class GameManager : MonoBehaviour
 
     }
 
-    
+    private void LateUpdate()
+    {
+        if (Input.GetKey("escape"))
+        {
+            Debug.Log("Quitting Game by esc key");
+            Application.Quit();
+        }
+    }
 }

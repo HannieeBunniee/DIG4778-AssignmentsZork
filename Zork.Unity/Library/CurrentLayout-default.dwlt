@@ -434,9 +434,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 36320000
-      m_LastClickedID: 12854
-      m_ExpandedIDs: 72fbffff063200002c320000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 12eaffff44eaffffd2eaffff82eeffffb4eeffff42efffff72fbffff2c3200002e3900004e390000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -591,9 +591,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 328.718, y: 252.81644, z: -169.27505}
+    m_Target: {x: 307.23038, y: 235.42206, z: -173.26572}
     speed: 2
-    m_Value: {x: 328.718, y: 252.81644, z: -169.27505}
+    m_Value: {x: 307.23038, y: 235.42206, z: -173.26572}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -626,9 +626,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 567.0055
+    m_Target: 517.12317
     speed: 2
-    m_Value: 567.0055
+    m_Value: 517.12317
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -791,18 +791,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000e239000000000000703f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: GameManager
-      m_OriginalName: GameManager
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 11008
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:
